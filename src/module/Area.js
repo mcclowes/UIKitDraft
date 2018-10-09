@@ -1,4 +1,4 @@
-import settings from "./settings";
+import variables from "./variables";
 import createElement from "../utils/createElement";
 import {sdp} from "./styles";
 
@@ -8,11 +8,11 @@ const Area = createElement({
     ...sdp,
     {
       boxSizing: 'border-box',
-      borderColor: settings.colors.lines,
-      backgroundColor: settings.colors.secondaryBackground,
-      borderStyle: settings.lines.style,
-      borderWidth: settings.lines.size,
-      borderRadius: settings.radius.size,
+      borderColor: variables.linesColor,
+      backgroundColor: variables.secondaryBackgroundColor,
+      borderStyle: variables.linesStyle,
+      borderWidth: variables.linesSize,
+      borderRadius: variables.radius
     }
   ]
 })

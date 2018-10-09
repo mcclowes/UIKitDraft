@@ -1,6 +1,6 @@
 import React from 'react';
 import settings from "./module/settings";
-
+import variables from "./module/variables";
 import EL from "./module/EL";
 
 import {
@@ -31,12 +31,12 @@ import {
 const range5 = [1, 2, 3, 4, 5]
 const range3 = [1, 2, 3]
 
-const examplesContainer = `display:flex; flex-wrap: wrap; align-items: flex-start; padding-right: ${settings.spaces[2]};`
+const examplesContainer = `display:flex; flex-wrap: wrap; align-items: flex-start; padding-right: ${variables.spaces[2]};`
 
 //todo the calc problem because of the margin? might not be a problem if you see that flex pushes you in going for the uncommented solution
 const example = `
   /*
-  flex:1 1 calc(50% - ${settings.spaces[2]});
+  flex:1 1 calc(50% - ${variables.spaces[2]});
   @media (max-width: 600px) {
     flex-basis: 100%;
   };
@@ -55,12 +55,12 @@ const Root = () => {
 
   <C>Spacing:</C>
 
-  <C>1</C><EL css={[`height: ${settings.spaces[1]}; background-color: ${settings.colors.primary};`]}/>
-  <C>2</C><EL css={[`height: ${settings.spaces[2]}; background-color: ${settings.colors.primary};`]}/>
-  <C>3</C><EL css={[`height: ${settings.spaces[3]}; background-color: ${settings.colors.primary};`]}/>
-  <C>4</C><EL css={[`height: ${settings.spaces[4]}; background-color: ${settings.colors.primary};`]}/>
-  <C>5</C><EL css={[`height: ${settings.spaces[5]}; background-color: ${settings.colors.primary};`]}/>
-  <C>6</C><EL css={[`height: ${settings.spaces[6]}; background-color: ${settings.colors.primary};`]}/>
+  <C>1</C><EL css={[`height: ${variables.spaces[1]}; background-color: ${settings.primaryColor};`]}/>
+  <C>2</C><EL css={[`height: ${variables.spaces[2]}; background-color: ${settings.primaryColor};`]}/>
+  <C>3</C><EL css={[`height: ${variables.spaces[3]}; background-color: ${settings.primaryColor};`]}/>
+  <C>4</C><EL css={[`height: ${variables.spaces[4]}; background-color: ${settings.primaryColor};`]}/>
+  <C>5</C><EL css={[`height: ${variables.spaces[5]}; background-color: ${settings.primaryColor};`]}/>
+  <C>6</C><EL css={[`height: ${variables.spaces[6]}; background-color: ${settings.primaryColor};`]}/>
 
   <C>Headers:</C>
 

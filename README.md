@@ -1,6 +1,6 @@
-# tinyui
+# micro-ui
 
-ofnb
+micro-ui
 
 ## Installation
 

@@ -1,4 +1,4 @@
-import settings from "./settings";
+import variables from "./variables";
 import createElement from "../utils/createElement";
 
 const LineX = createElement({
@@ -8,9 +8,9 @@ const LineX = createElement({
     'mb2',
     'mrn2',
     {
-      borderColor: settings.colors.lines,
-      borderStyle: settings.lines.style,
-      borderWidth: `0 0 ${settings.lines.size} 0`
+      borderColor: variables.linesColor,
+      borderStyle: variables.linesStyle,
+      borderWidth: `0 0 ${variables.linesSize} 0`
     }
   ]
 })

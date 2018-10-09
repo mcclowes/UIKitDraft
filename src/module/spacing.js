@@ -1,11 +1,11 @@
-import settings from "./settings";
 import {css} from 'emotion'
+import variables from "./variables";
 
 const spacing = {}
 
 const range = [0, 1, 2, 3, 4, 5, 6]
 range.map((e, i) => {
-  const spacingI = i === 0 ? 0 : settings.spaces[i]
+  const spacingI = i === 0 ? 0 : variables.spaces[i]
   spacing['m' + i] = css({margin: spacingI})
   spacing['mt' + i] = css({marginTop: spacingI})
   spacing['mr' + i] = css({marginRight: spacingI})
@@ -21,7 +21,7 @@ range.map((e, i) => {
   spacing['px' + i] = css({paddingLeft: spacingI, paddingRight: spacingI})
   spacing['py' + i] = css({paddingTop: spacingI, paddingBottom: spacingI})
   if (i > 0) {
-    const negativeSpacingI = '-' + settings.spaces[i]
+    const negativeSpacingI = '-' + variables.spaces[i]
     spacing['mn' + i] = css({margin: negativeSpacingI})
     spacing['mtn' + i] = css({marginTop: negativeSpacingI})
     spacing['mrn' + i] = css({marginRight: negativeSpacingI})

@@ -1,15 +1,15 @@
 {
-  "name": "tinyui",
+  "name": "micro-ui",
   "private": true,
   "version": "0.0.0",
-  "description": "tinyui",
+  "description": "micro-ui",
   "main": "./build/umd/umd.js",
   "react-scv": {
     "appBuildEntry": "src/app.js",
     "umdBuildEntry": "src/module/index.js",
     "html": {
-      "title": "tinyui",
-      "description": "tinyui"
+      "title": "micro-ui",
+      "description": "micro-ui"
     },
     "devServer": {
       "port": "4000"

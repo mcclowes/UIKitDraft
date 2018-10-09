@@ -7,24 +7,23 @@ import Radio from './Radio'
 import A from './A'
 import {injectGlobal} from 'emotion'
 import createElement from "../utils/createElement";
-import settings from "./settings";
 import {sdp} from "../module/styles";
 import Img from "./Img";
 import LineX from "./LineX";
 import LineY from "./LineY";
 import Area from "./Area";
 import TextArea from "./TextArea";
-import spacing from "./spacing";
+import variables from "./variables";
 
 const W = createElement({name: 'W', as: 'div', css: [...sdp]})
 const C = createElement({name: 'C', as: 'div', css: ['display:inline-block;']})
 
-const H1 = createElement({name: 'H1', as: 'h1', css:[`font-size:${settings.fontSize[6]};`]})
-const H2 = createElement({name: 'H2', as: 'h2', css:[`font-size:${settings.fontSize[5]};`]})
-const H3 = createElement({name: 'H3', as: 'h3', css:[`font-size:${settings.fontSize[4]};`]})
-const H4 = createElement({name: 'H4', as: 'h4', css:[`font-size:${settings.fontSize[3]};`]})
-const H5 = createElement({name: 'H5', as: 'h5', css:[`font-size:${settings.fontSize[2]};`]})
-const H6 = createElement({name: 'H6', as: 'h6', css:[`font-size:${settings.fontSize[1]};`]})
+const H1 = createElement({name: 'H1', as: 'h1', css: [`font-size:${variables.textSizes[6]};`]})
+const H2 = createElement({name: 'H2', as: 'h2', css: [`font-size:${variables.textSizes[5]};`]})
+const H3 = createElement({name: 'H3', as: 'h3', css: [`font-size:${variables.textSizes[4]};`]})
+const H4 = createElement({name: 'H4', as: 'h4', css: [`font-size:${variables.textSizes[3]};`]})
+const H5 = createElement({name: 'H5', as: 'h5', css: [`font-size:${variables.textSizes[2]};`]})
+const H6 = createElement({name: 'H6', as: 'h6', css: [`font-size:${variables.textSizes[1]};`]})
 
 const Option = createElement({name: 'Option', as: 'option'})
 const Label = createElement({name: 'Label', as: 'label', css: [`display: inline-block;`]})
@@ -52,18 +51,16 @@ const getGoogleFontName = (name) => {
 injectGlobal`
   @import url('http://fonts.googleapis.com/css?family=Lato');
   body {
-    font-size: ${settings.fontSize[3]};
-    color: ${settings.text.color};
-    font-family: '${settings.text.fontName}', serif;
-    background-color:${settings.colors.primaryBackground};
+    font-size: ${variables.textSizes[3]};
+    color: ${variables.textColor};
+    font-family: '${variables.fontName}', serif;
+    background-color:${variables.primaryBackgroundColor};
     margin:0;
   }
 `
 
 //
-//font-family: '${settings.text.fontName}', serif;
-
-
+//font-family: '${variables.text.fontName}', serif;
 
 export {
   EL,

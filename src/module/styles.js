@@ -1,6 +1,6 @@
 import {shade} from "polished";
 import {css} from "emotion";
-import settings from "./settings";
+import variables from "./variables";
 import {tint} from "polished";
 
 const sdm = ['m0', 'mb2', 'ml2'] //single direction margin
@@ -12,33 +12,27 @@ const inputs = css(`
   font-size: 100%;
   font-weight: normal;
   box-shadow: none;
-  background-color: ${settings.inputs.background};
-  border-color: ${settings.colors.lines};
-  border-style: ${settings.lines.style};
-  border-width: ${settings.lines.size};
-  border-radius: ${settings.radius.size};
+  background-color: ${variables.inputsBackgroundColor};
+  border-color: ${variables.linesColor};
+  border-style: ${variables.linesStyle};
+  border-width: ${variables.linesSize};
+  border-radius: ${variables.radius};
   &:hover {
-    border-color: ${shade(1 - 0.12, settings.colors.lines)};
+    border-color: ${shade(1 - 0.12, variables.linesColor)};
   };
   &:focus {
-    border-color: ${tint(1 - 0.5, settings.colors.primary)};
-    box-shadow: 0 0 0 ${settings.lines.size} ${tint(1 - 0.5, settings.colors.primary)};
+    border-color: ${tint(1 - 0.5, variables.primaryColor)};
+    box-shadow: 0 0 0 ${variables.linesSize} ${tint(1 - 0.5, variables.primaryColor)};
     outline: none;
   };
   &:active {
-    border-color: ${tint(1 - 0.5, settings.colors.primary)};
+    border-color: ${tint(1 - 0.5, variables.primaryColor)};
   };
   &:disabled {
-    border-color: ${settings.colors.lines};
-    background-color: ${shade(1 - 0.04, settings.inputs.background)};
+    border-color: ${variables.linesColor};
+    background-color: ${shade(1 - 0.04, variables.inputsBackgroundColor)};
     cursor: not-allowed;
   };
-  /* this affects default selects for some reason 😓
-  &:read-only {
-    background-color: ${shade(1 - 0.04, settings.inputs.background)};
-    cursor: not-allowed;
-  };
-  */
 `)
 
 export {sdm, sdp, inputs}

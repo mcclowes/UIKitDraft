@@ -1,22 +1,22 @@
 import createElement from "../utils/createElement";
-import settings from "./settings";
 import {shade, tint} from "polished/lib/index";
+import variables from "./variables";
 
 const A = createElement({
   name: 'A', as: 'a', css: ['m0', `
-    color: ${settings.colors.primary};
+    color: ${variables.primaryColor};
     text-decoration: none;
-    border-radius: ${settings.radius.size};
+    border-radius: ${variables.radius};
     &:hover {
-      color: ${shade(1 - 0.12, settings.colors.primary)};
+      color: ${shade(1 - 0.12, variables.primaryColor)};
     };
     &:active {
-      color: ${shade(1 - 0.22, settings.colors.primary)};
+      color: ${shade(1 - 0.22, variables.primaryColor)};
     };
     &:focus {
       outline: none;
-      border-color: ${settings.colors.primary};
-      box-shadow: 0 0 0 2px ${tint(1 - 0.5, settings.colors.primary)};
+      border-color: ${variables.primaryColor};
+      box-shadow: 0 0 0 2px ${tint(1 - 0.5, variables.primaryColor)};
     }
   `]
 })

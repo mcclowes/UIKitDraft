@@ -1,11 +1,11 @@
 import React from 'react'
 import createElement from "../utils/createElement";
 import EL from "./EL";
-import settings from "./settings";
 import {shade} from "polished";
 import {tint} from "polished/lib/index";
 import {sdm} from "./styles";
 import getUniqueIndex from './getUniqueIndex'
+import variables from "./variables";
 
 const NativeCheckbox = createElement({
   name: 'Input', as: 'input', css: [`
@@ -31,20 +31,20 @@ class Checkbox extends React.Component {
           content: "";
         };
         input[type="checkbox"]:hover + label::before {
-          border-color: ${shade(1 - 0.12, settings.colors.lines)};
+          border-color: ${shade(1 - 0.12, variables.linesColor)};
         };
         input[type="checkbox"]:focus + label::before {
-          border-color: ${tint(1 - 0.5, settings.colors.primary)};
-          box-shadow: 0 0 0 ${settings.lines.size} ${tint(1 - 0.5, settings.colors.primary)};
+          border-color: ${tint(1 - 0.5, variables.primaryColor)};
+          box-shadow: 0 0 0 ${variables.lineSize} ${tint(1 - 0.5, variables.primaryColor)};
           outline: none;
         };
         input[type="checkbox"]:active + label::before {
-          border-color: ${tint(1 - 0.5, settings.colors.primary)};
-          box-shadow: 0 0 0 ${settings.lines.size} ${tint(1 - 0.5, settings.colors.primary)};
+          border-color: ${tint(1 - 0.5, variables.primaryColor)};
+          box-shadow: 0 0 0 ${variables.linesSize} ${tint(1 - 0.5, variables.primaryColor)};
         };
         input[type="checkbox"]:disabled + label::before {
-          border-color: ${settings.colors.lines};
-          background-color: ${shade(1 - 0.04, settings.inputs.background)};
+          border-color: ${variables.linesColor};
+          background-color: ${shade(1 - 0.04, variables.inputsBackgroundColor)};
           box-shadow: none;
           cursor: not-allowed;
         };
@@ -56,14 +56,14 @@ class Checkbox extends React.Component {
         min-width: 18px;
         cursor: pointer;
         &::before {
-          background-color: ${settings.inputs.background};
+          background-color: ${variables.inputsBackgroundColor};
           content: "";
           display: block;
           position: absolute;
           height: 16px;
           width: 16px;
-          border: ${settings.lines.size} ${settings.lines.style} ${settings.colors.lines};
-          border-radius: ${settings.radius.size};
+          border: ${variables.linesSize} ${variables.linesStyle} ${variables.linesColor};
+          border-radius: ${variables.radius};
         };
         &::after {
           top:4px;
@@ -75,7 +75,7 @@ class Checkbox extends React.Component {
           width: 8px;
           border-left: 2px solid;
           border-bottom: 2px solid;
-          border-color: ${settings.text.color};
+          border-color: ${variables.textColor};
           transform: rotate(-45deg);
         };
       `]} htmlFor={labelId}>&nbsp;</EL>

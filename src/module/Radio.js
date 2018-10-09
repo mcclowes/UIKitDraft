@@ -1,7 +1,7 @@
 import React from 'react'
 import createElement from "../utils/createElement";
 import EL from "./EL";
-import settings from "./settings";
+import variables from "./variables";
 import {shade} from "polished";
 import {tint} from "polished/lib/index";
 import {sdm} from "./styles";
@@ -31,20 +31,20 @@ class Radio extends React.Component {
           content: "";
         };
         input[type="radio"]:hover + label::before {
-          border-color: ${shade(1 - 0.12, settings.colors.lines)};
+          border-color: ${shade(1 - 0.12, variables.linesColor)};
         };
         input[type="radio"]:focus + label::before {
-          border-color: ${tint(1 - 0.5, settings.colors.primary)};
-          box-shadow: 0 0 0 ${settings.lines.size} ${tint(1 - 0.5, settings.colors.primary)};
+          border-color: ${tint(1 - 0.5, variables.primaryColor)};
+          box-shadow: 0 0 0 ${variables.linesSize} ${tint(1 - 0.5, variables.primaryColor)};
           outline: none;
         };
         input[type="radio"]:active + label::before {
-          border-color: ${tint(1 - 0.5, settings.colors.primary)};
-          box-shadow: 0 0 0 ${settings.lines.size} ${tint(1 - 0.5, settings.colors.primary)};
+          border-color: ${tint(1 - 0.5, variables.primaryColor)};
+          box-shadow: 0 0 0 ${variables.linesSize} ${tint(1 - 0.5, variables.primaryColor)};
         };
         input[type="radio"]:disabled + label::before {
-          border-color: ${settings.colors.lines};
-          background-color: ${shade(1 - 0.04, settings.inputs.background)};
+          border-color: ${variables.linesColor};
+          background-color: ${shade(1 - 0.04, variables.inputsBackgroundColor)};
           box-shadow: none;
           cursor: not-allowed;
         };
@@ -56,13 +56,13 @@ class Radio extends React.Component {
       width: 18px;
       cursor: pointer;
       &::before {
-        background-color: ${settings.inputs.background};
+        background-color: ${variables.inputsBackgroundColor};
         content: "";
         display: block;
         position: absolute;
         height: 16px;
         width: 16px;
-        border: ${settings.lines.size} ${settings.lines.style} ${settings.colors.lines};
+        border: ${variables.linesSize} ${variables.linesStyle} ${variables.linesColor};
         border-radius: 50%;
       };
       &::after {
@@ -73,7 +73,7 @@ class Radio extends React.Component {
         display: block;
         height: 8px;
         width: 8px;
-        background-color: ${settings.text.color};
+        background-color: ${variables.textColor};
         border-radius: 50%;
       };
     `]} htmlFor={labelId}>&nbsp;</EL>
