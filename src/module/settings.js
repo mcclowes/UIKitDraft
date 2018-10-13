@@ -16,18 +16,10 @@ const shadingValues = {
 }
 */
 
-/*
-try to get everything tight with only and applying fibonacci
-spacesBase
-colorsBase
-textSizeBase
-*/
-
 let settings = {
-  textScale: 3,
-  spacesScale: 4,
+  textScale: 2.8,
+  spacesScale: 3,
   fontName: 'Lato',
-  textSize: '16px',
   textColor: 'black',
   invertedTextColor: '#ffffff',
   primaryColor: `#0075db`,
@@ -35,17 +27,15 @@ let settings = {
   secondaryBackgroundColor: `#ffffff`,
   inputsBackgroundColor: `#ffffff`,
   linesColor: '#e6e6e6',
-  linesStyle: `solid`,
-  linesSize: `1px`,
-  radius: '3px'
+  radius: '5px'
 }
 
 /*
 settings = {
-  textScale: 3,
-  spacesScale: 4,
-  fontName: 'Lato',
-  textSize: '16px',
+  isDark: true,
+  textScale: 2.8,
+  spacesScale: 3,
+  fontName: 'Mali',
   textColor: '#ffffff',
   invertedTextColor: '#000000',
   primaryColor: `#f4612e`,
@@ -53,13 +43,11 @@ settings = {
   secondaryBackgroundColor: `#161719`,
   inputsBackgroundColor: `#414147`,
   linesColor: '#2a2a2e',
-  linesUnit: outlineSizeUnit,
-  linesValue: outlineSizeValue,
-  linesStyle: `solid`,
-  linesSize: outlineSizeValue + outlineSizeUnit,
   radius: '3px'
 }
 */
+
+
 
 export default settings
 

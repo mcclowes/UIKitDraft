@@ -1,5 +1,4 @@
 import createElement from "../utils/createElement";
-import {shade, tint} from "polished/lib/index";
 import variables from "./variables";
 
 const Button = createElement({
@@ -17,20 +16,20 @@ const Button = createElement({
     font-weight: bold;
     color: ${variables.invertedTextColor};
     &:hover {
-      background-color: ${shade(1 - 0.12, variables.primaryColor)};
-      border-color: ${shade(1 - 0.12, variables.primaryColor)};
+      background-color: ${variables.primaryColorHover};
+      border-color: ${variables.primaryColorHover};
     };
     &:focus {
-      border-color: ${tint(1 - 0.5, variables.primaryColor)};
-      box-shadow: 0 0 0 1px ${tint(1 - 0.5, variables.primaryColor)};
+      border-color: ${variables.focusColor};
+      box-shadow: 0 0 0 1px ${variables.focusColor};
       outline: none;
     };
     &:active {
-      background-color: ${shade(1 - 0.22, variables.primaryColor)};
+      background-color: ${variables.primaryColorActive};
     };
     &:disabled {
-      background-color: ${tint(1 - 0.7, variables.primaryColor)};
-      border-color: ${tint(1 - 0.7, variables.primaryColor)};
+      background-color: ${variables.primaryColorDisabled};
+      border-color: ${variables.primaryColorDisabled};
       cursor: not-allowed;
     };
     border-radius: ${variables.radius};
@@ -38,3 +37,5 @@ const Button = createElement({
 })
 
 export default Button
+
+

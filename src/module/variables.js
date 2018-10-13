@@ -1,4 +1,5 @@
 import settings from "./settings";
+import {shade, tint} from "polished/lib/index";
 
 const {spacesScale, textScale} = settings
 
@@ -10,12 +11,18 @@ export default {
   textColor: settings.textColor,
   invertedTextColor: settings.invertedTextColor,
   primaryColor: settings.primaryColor,
+  primaryColorHover: shade(1 - 0.12, settings.primaryColor),
+  primaryColorActive: shade(1 - 0.22, settings.primaryColor),
+  focusColor: tint(1 - 0.5, settings.primaryColor),
   primaryBackgroundColor: settings.primaryBackgroundColor,
   secondaryBackgroundColor: settings.secondaryBackgroundColor,
   inputsBackgroundColor: settings.inputsBackgroundColor,
+  inputsBackgroundColorDisabled: shade(1 - 0.04, settings.inputsBackgroundColor),
   linesColor: settings.linesColor,
-  linesStyle: settings.linesStyle,
-  linesSize: settings.linesSize,
+  linesColorHover: shade(1 - 0.12, settings.linesColor),
+  primaryColorDisabled: tint(1 - 0.7, settings.primaryColor),
+  linesStyle: 'solid',
+  linesSize: `1px`,
   radius: settings.radius,
   spaces: {
     1: 1 / spacesScale + spacesSizeUnit,

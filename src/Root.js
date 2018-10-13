@@ -71,26 +71,32 @@ const Root = () => {
   <H5>Header 5</H5>
   <H6>Header 6</H6>
 
-  <H2>Area:</H2>
+  <H3>Area:</H3>
 
   <Area>
     <EL>Area content</EL>
   </Area>
 
-  <H2>LineX:</H2>
+  <H3>LineX:</H3>
 
   <Area>
     <LineX/>
   </Area>
 
-  <H2>Buttons:</H2>
+  <H3>LineY:</H3>
+
+  <Area>
+    <LineX/>
+  </Area>
+
+  <H3>Buttons:</H3>
 
   <C>Primary:</C>
   <Button>Primary</Button>
   <C>Disabled:</C>
   <Button disabled>Disabled</Button>
 
-  <H2>Input:</H2>
+  <H3>Input:</H3>
 
   <C>Default:</C>
   <Input/>
@@ -99,7 +105,7 @@ const Root = () => {
   {/*<C>ReadOnly:</C>
   <Input readOnly/>*/}
 
-  <H2>TextArea:</H2>
+  <H3>TextArea:</H3>
 
   <C>Default:</C>
   <TextArea/>
@@ -108,7 +114,7 @@ const Root = () => {
   {/*<C>ReadOnly:</C>
   <TextArea readOnly/>*/}
 
-  <H2>Select:</H2>
+  <H3>Select:</H3>
 
   <C>Default:</C>
   <Select>
@@ -131,7 +137,7 @@ const Root = () => {
     <Option>3</Option>
   </Select>
 
-  <H2>Checkbox:</H2>
+  <H3>Checkbox:</H3>
 
   <C>Default:</C><br/>
   <Checkbox/><br/>
@@ -156,7 +162,7 @@ const Root = () => {
   <EL css={[examplesContainer]}>
 
     <Area css={[example]}>
-      <H2>Delivery options</H2>
+      <H3>Delivery options</H3>
       <LineX/>
       {range5.map((e) => (<div key={e}><Label>Option {e}</Label><Radio name="myRadio" value={e}/><br/></div>))}
       <LineX/>
@@ -164,7 +170,7 @@ const Root = () => {
     </Area>
 
     <Area css={[example]}>
-      <H2>Delivery options</H2>
+      <H3>Delivery options</H3>
       <LineX/>
       <Select>
         {range5.map((e) => (<Option key={e} value={e}>Option {e}</Option>))}
@@ -174,7 +180,7 @@ const Root = () => {
     </Area>
 
     <Area css={[example]}>
-      <H2>Sign up</H2>
+      <H3>Sign up</H3>
       <LineX/>
       <EL css={[`display: flex;`]}>
         <EL css={[`flex: 1;`]}>
@@ -213,7 +219,7 @@ const Root = () => {
     </Area>
 
     <Area css={[example]}>
-      <H2>Horizontal</H2>
+      <H3>Horizontal</H3>
       <LineX/>
       <EL css={[`display: flex; align-items: baseline;`]}>
         <Label css={`flex: 0 0 120px; white-space: nowrap;`}>Field 1</Label>
@@ -237,7 +243,7 @@ const Root = () => {
     </Area>
 
     <Area css={[example]}>
-      <H2>Sign up</H2>
+      <H3>Sign up</H3>
       <LineX/>
       <Label>Username</Label>
       <Input placeholder="Username"/><br/>
@@ -279,7 +285,7 @@ const Root = () => {
     </Area>
 
     <Area css={[example]}>
-      <H2>Some Header</H2>
+      <H3>Some Header</H3>
       <LineX/>
       <H4>Some Header</H4>
       <C>Some text content content content content content content content content content content content</C>

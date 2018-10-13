@@ -1,8 +1,7 @@
 import React from 'react'
 import createElement from "../utils/createElement";
 import EL from "./EL";
-import {shade} from "polished";
-import {tint} from "polished/lib/index";
+import {tint,shade} from "polished";
 import {sdm} from "./styles";
 import getUniqueIndex from './getUniqueIndex'
 import variables from "./variables";
@@ -31,20 +30,20 @@ class Checkbox extends React.Component {
           content: "";
         };
         input[type="checkbox"]:hover + label::before {
-          border-color: ${shade(1 - 0.12, variables.linesColor)};
+          border-color: ${variables.linesColorHover};
         };
         input[type="checkbox"]:focus + label::before {
-          border-color: ${tint(1 - 0.5, variables.primaryColor)};
-          box-shadow: 0 0 0 ${variables.lineSize} ${tint(1 - 0.5, variables.primaryColor)};
+          border-color: ${variables.focusColor};
+          box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
           outline: none;
         };
         input[type="checkbox"]:active + label::before {
-          border-color: ${tint(1 - 0.5, variables.primaryColor)};
-          box-shadow: 0 0 0 ${variables.linesSize} ${tint(1 - 0.5, variables.primaryColor)};
+          border-color: ${variables.focusColor};
+          box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
         };
         input[type="checkbox"]:disabled + label::before {
           border-color: ${variables.linesColor};
-          background-color: ${shade(1 - 0.04, variables.inputsBackgroundColor)};
+          background-color: ${variables.inputsBackgroundColorDisabled};
           box-shadow: none;
           cursor: not-allowed;
         };

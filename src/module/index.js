@@ -28,39 +28,29 @@ const H6 = createElement({name: 'H6', as: 'h6', css: [`font-size:${variables.tex
 const Option = createElement({name: 'Option', as: 'option'})
 const Label = createElement({name: 'Label', as: 'label', css: [`display: inline-block;`]})
 
-//todo hover active on areas
 //todo input validation?
-//todo input placeholders?
-//todo use only border or boxshadow for input styles?
 //todo replace tint and shadow with something that would survive dark/white
 //todo try to make consistent tint/shadow values
-//todo random unit all around e.g 2px in button shadow
-//todo check/radio size and positioning depending on font-size: 16px; and or spacing? ????
-//todo textarea
-//todo secondary
+//todo try to customise and see what breaks
 //todo per each component test they nac receive override props and styles
 //todo document that importing babel polyfill is needed
+//todo hover active on areas
 //todo fix fonts
 
-/*
 const getGoogleFontName = (name) => {
   return name.split('"').join().split('\'').join().split(' ').join('+')
 }
-*/
 
 injectGlobal`
-  @import url('http://fonts.googleapis.com/css?family=Lato');
+  @import url('http://fonts.googleapis.com/css?family=${getGoogleFontName(variables.fontName)}');
   body {
     font-size: ${variables.textSizes[3]};
     color: ${variables.textColor};
     font-family: '${variables.fontName}', serif;
     background-color:${variables.primaryBackgroundColor};
-    margin:0;
+    margin: 0;
   }
 `
-
-//
-//font-family: '${variables.text.fontName}', serif;
 
 export {
   EL,
