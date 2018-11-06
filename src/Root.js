@@ -1,10 +1,14 @@
-import React from 'react';
-import variables from "./module/variables";
 import EL from "./module/EL";
+import React from 'react';
+import variables from "./module/helpers/variables";
 
 import {
   //W,
+  A,
+  Area,
+  Button,
   C,
+  Checkbox,
   H1,
   H2,
   H3,
@@ -12,18 +16,14 @@ import {
   H5,
   H6,
   Img,
-  Label,
   Input,
-  TextArea,
-  Checkbox,
-  Radio,
-  Button,
+  Label,
   LineX,
   LineY,
-  Select,
   Option,
-  Area,
-  A
+  Radio,
+  Select,
+  TextArea,
 } from "./module";
 
 

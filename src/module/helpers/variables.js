@@ -56,26 +56,6 @@ variables.spaceSize4 = 5 / variables.spacesScale + variables.spacesSizeUnit
 variables.spaceSize5 = 8 / variables.spacesScale + variables.spacesSizeUnit
 variables.spaceSize6 = 13 / variables.spacesScale + variables.spacesSizeUnit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 
 
@@ -136,20 +116,5 @@ variables.spaceSize6 = 13 / variables.spacesScale + variables.spacesSizeUnit
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default variables

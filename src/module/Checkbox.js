@@ -1,28 +1,37 @@
-import React from 'react'
-import createElement from "../utils/createElement";
+import { sdm } from "./helpers/styles";
+
 import EL from "./EL";
-import {sdm} from "./styles";
-import getUniqueIndex from './getUniqueIndex'
-import variables from "./variables";
+import React from "react";
+import createElement from "../utils/createElement";
+import getUniqueIndex from "./helpers/getUniqueIndex";
+import variables from "./helpers/variables";
 
 const NativeCheckbox = createElement({
-  name: 'Input', as: 'input', css: [`
+  name: "Input",
+  as: "input",
+  css: [
+    `
     position: absolute;
     z-index: -1;
     opacity: 0;
-  `], props: {type: 'checkbox'}
-})
+  `
+  ],
+  props: { type: "checkbox" }
+});
 
 class Checkbox extends React.Component {
-
-  componentWillMount () {
-    this.uniqueIndex = getUniqueIndex()
+  componentWillMount() {
+    this.uniqueIndex = getUniqueIndex();
   }
 
-  render () {
-    const {id, ...rest} = this.props;
-    const labelId = id || 'tui-checkbox-' + this.uniqueIndex
-    return <EL css={[...sdm, `
+  render() {
+    const { id, ...rest } = this.props;
+    const labelId = id || "tui-checkbox-" + this.uniqueIndex;
+    return (
+      <EL
+        css={[
+          ...sdm,
+          `
         display: inline-block;
         position:relative;
         input[type="checkbox"]:checked + label::after {
@@ -46,9 +55,14 @@ class Checkbox extends React.Component {
           box-shadow: none;
           cursor: not-allowed;
         };
-      `]}>
-      <NativeCheckbox id={labelId} {...rest}/>
-      <EL as="label" css={[`
+      `
+        ]}
+      >
+        <NativeCheckbox id={labelId} {...rest} />
+        <EL
+          as="label"
+          css={[
+            `
         user-select: none;
         display: inline-block;
         min-width: 18px;
@@ -60,7 +74,9 @@ class Checkbox extends React.Component {
           position: absolute;
           height: 16px;
           width: 16px;
-          border: ${variables.linesSize} ${variables.linesStyle} ${variables.linesColor};
+          border: ${variables.linesSize} ${variables.linesStyle} ${
+              variables.linesColor
+            };
           border-radius: ${variables.radius};
         };
         &::after {
@@ -76,9 +92,15 @@ class Checkbox extends React.Component {
           border-color: ${variables.textColor};
           transform: rotate(-45deg);
         };
-      `]} htmlFor={labelId}>&nbsp;</EL>
-    </EL>;
+      `
+          ]}
+          htmlFor={labelId}
+        >
+          &nbsp;
+        </EL>
+      </EL>
+    );
   }
 }
 
-export default Checkbox
+export default Checkbox;

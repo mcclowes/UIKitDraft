@@ -1,4 +1,4 @@
-import variables from "./variables";
+import variables from "./helpers/variables";
 import createElement from "../utils/createElement";
 
 const LineY = createElement({

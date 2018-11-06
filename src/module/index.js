@@ -1,19 +1,20 @@
-import EL from './EL'
-import Button from './Button'
-import Select from './Select'
-import Input from './Input'
-import Checkbox from './Checkbox'
-import Radio from './Radio'
-import A from './A'
 import {injectGlobal} from 'emotion'
-import createElement from "../utils/createElement";
-import {sdp} from "../module/styles";
+import {sdp} from "./helpers/styles";
+
+import A from './A'
+import Area from "./Area";
+import Button from './Button'
+import Checkbox from './Checkbox'
+import EL from './EL'
 import Img from "./Img";
+import Input from './Input'
 import LineX from "./LineX";
 import LineY from "./LineY";
-import Area from "./Area";
+import Radio from './Radio'
+import Select from './Select'
 import TextArea from "./TextArea";
-import variables from "./variables";
+import createElement from "../utils/createElement";
+import variables from "./helpers/variables";
 
 const W = createElement({name: 'W', as: 'div', css: [...sdp]})
 const C = createElement({name: 'C', as: 'div', css: ['display:inline-block;']})

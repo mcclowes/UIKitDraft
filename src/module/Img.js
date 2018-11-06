@@ -1,5 +1,5 @@
 import createElement from "../utils/createElement";
-import variables from "./variables";
+import variables from "./helpers/variables";
 
 const Img = createElement({
   name: 'Img', as: 'img', css: [`

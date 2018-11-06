@@ -1,8 +1,8 @@
-import '@babel/polyfill'
+import {AppContainer} from 'react-hot-loader';
 
+import '@babel/polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
 import Root from './Root';
 
 //enables react-hot-reload 3 for any children of Root:

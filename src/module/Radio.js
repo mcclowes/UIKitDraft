@@ -1,9 +1,9 @@
 import React from 'react'
 import createElement from "../utils/createElement";
 import EL from "./EL";
-import variables from "./variables";
-import {sdm} from "./styles";
-import getUniqueIndex from "./getUniqueIndex";
+import variables from "./helpers/variables";
+import {sdm} from "./helpers/styles";
+import getUniqueIndex from "./helpers/getUniqueIndex";
 
 const NativeRadio = createElement({
   name: 'Input', as: 'input', css: [`

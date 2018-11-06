@@ -1,6 +1,6 @@
-import variables from "./variables";
+import variables from "./helpers/variables";
 import createElement from "../utils/createElement";
-import {sdp} from "./styles";
+import {sdp} from "./helpers/styles";
 
 const Area = createElement({
   name: 'Area',
