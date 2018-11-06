@@ -4,7 +4,7 @@ import variables from "./variables";
 const Img = createElement({
   name: 'Img', as: 'img', css: [`
   display: block; 
-  width: calc(100% - ${variables.spaces[2]});;
+  width: calc(100% - ${variables.spaceSize2});;
   height: auto;
 `]
 })

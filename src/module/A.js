@@ -14,7 +14,7 @@ const A = createElement({
     };
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 2px ${variables.focusColor};
+      box-shadow: 0 0 0 ${1 + variables.linesWidth + variables.linesSizeUnit} ${variables.focusColor};
     }
   `]
 })

@@ -1,5 +1,4 @@
 import React from 'react';
-import settings from "./module/settings";
 import variables from "./module/variables";
 import EL from "./module/EL";
 
@@ -31,12 +30,12 @@ import {
 const range5 = [1, 2, 3, 4, 5]
 const range3 = [1, 2, 3]
 
-const examplesContainer = `display:flex; flex-wrap: wrap; align-items: flex-start; padding-right: ${variables.spaces[2]};`
+const examplesContainer = `display:flex; flex-wrap: wrap; align-items: flex-start; padding-right: ${variables.spaceSize2};`
 
 //todo the calc problem because of the margin? might not be a problem if you see that flex pushes you in going for the uncommented solution
 const example = `
   /*
-  flex:1 1 calc(50% - ${variables.spaces[2]});
+  flex:1 1 calc(50% - ${variables.spaceSize2});
   @media (max-width: 600px) {
     flex-basis: 100%;
   };
@@ -48,19 +47,19 @@ const Root = () => {
 
   return <>
 
-  <C> - there are few theme settings all the rest is overrides, you are on your own there </C><br/>
-  <C> - all content is inline, all containers are block, the rest is layout </C><br/>
+  <C> - there are few theme settings all the rest is overrides </C><br/>
+  <C> - all content flows as it was inline, all containers are block. Any layout is up to you how to handle it e.g flexboxes </C><br/>
   <C> - all content has one direction margin (margin bottom, margin left) </C><br/>
   <C> - all containers have one direction padding (padding top, padding right) </C><br/>
 
   <C>Spacing:</C>
 
-  <C>1</C><EL css={[`height: ${variables.spaces[1]}; background-color: ${settings.primaryColor};`]}/>
-  <C>2</C><EL css={[`height: ${variables.spaces[2]}; background-color: ${settings.primaryColor};`]}/>
-  <C>3</C><EL css={[`height: ${variables.spaces[3]}; background-color: ${settings.primaryColor};`]}/>
-  <C>4</C><EL css={[`height: ${variables.spaces[4]}; background-color: ${settings.primaryColor};`]}/>
-  <C>5</C><EL css={[`height: ${variables.spaces[5]}; background-color: ${settings.primaryColor};`]}/>
-  <C>6</C><EL css={[`height: ${variables.spaces[6]}; background-color: ${settings.primaryColor};`]}/>
+  <C>1</C><EL css={[`height: ${variables.spaceSize1}; background-color: ${variables.primaryColor};`]}/>
+  <C>2</C><EL css={[`height: ${variables.spaceSize2}; background-color: ${variables.primaryColor};`]}/>
+  <C>3</C><EL css={[`height: ${variables.spaceSize3}; background-color: ${variables.primaryColor};`]}/>
+  <C>4</C><EL css={[`height: ${variables.spaceSize4}; background-color: ${variables.primaryColor};`]}/>
+  <C>5</C><EL css={[`height: ${variables.spaceSize5}; background-color: ${variables.primaryColor};`]}/>
+  <C>6</C><EL css={[`height: ${variables.spaceSize6}; background-color: ${variables.primaryColor};`]}/>
 
   <C>Headers:</C>
 
@@ -86,7 +85,9 @@ const Root = () => {
   <H3>LineY:</H3>
 
   <Area>
-    <LineX/>
+    <EL css={[`display:flex;`]}>
+      <LineY/>
+    </EL>
   </Area>
 
   <H3>Buttons:</H3>

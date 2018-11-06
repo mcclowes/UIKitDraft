@@ -8,7 +8,7 @@ const Select = createElement({
     cursor: pointer;
     display: inline-block;
     box-sizing: border-box;
-    width: calc(100% - ${variables.spaces[2]});
+    width: calc(100% - ${variables.spaceSize2});
     padding-right: 24px; /*avoids overlapping the icon with the text (and hiding the icon on explorer)*/
     &:focus::-ms-value {
       color: ${variables.textColor};

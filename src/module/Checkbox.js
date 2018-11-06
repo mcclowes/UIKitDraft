@@ -1,7 +1,6 @@
 import React from 'react'
 import createElement from "../utils/createElement";
 import EL from "./EL";
-import {tint,shade} from "polished";
 import {sdm} from "./styles";
 import getUniqueIndex from './getUniqueIndex'
 import variables from "./variables";
