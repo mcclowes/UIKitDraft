@@ -1,18 +1,11 @@
 import variables from "./helpers/variables";
 import createElement from "../utils/createElement";
+import styled from 'react-emotion'
 
-const LineY = createElement({
-  name: 'LineY',
-  css: [
-    'm0',
-    'ml2',
-    'mtn2',
-    {
-      borderColor: variables.linesColor,
-      borderStyle: variables.linesStyle,
-      borderWidth: `0 ${variables.linesSize} 0 0`
-    }
-  ]
-})
+const LineY = styled('div')`
+  border-color: variables.linesColor;
+  border-style: variables.linesStyle;
+  border-width: 0 ${variables.linesSize} 0 0;
+`
 
 export default LineY

@@ -1,18 +1,11 @@
 import variables from "./helpers/variables";
 import createElement from "../utils/createElement";
+import styled from 'react-emotion'
 
-const LineX = createElement({
-  name: 'LineX',
-  css: [
-    'm0',
-    'mb2',
-    'mrn2',
-    {
-      borderColor: variables.linesColor,
-      borderStyle: variables.linesStyle,
-      borderWidth: `0 0 ${variables.linesSize} 0`
-    }
-  ]
-})
+const LineX = styled('div')`
+  border-color: variables.linesColor;
+  border-style: variables.linesStyle;
+  border-width: 0 0 ${variables.linesSize} 0;
+`
 
 export default LineX

@@ -1,8 +1,10 @@
-import React from "react";
 import {cx, css as cssFn} from "emotion";
-import spacing from "./helpers/spacing";
 
-const EL = ({css = [], as = 'div', className = false, ...rest}) => {
+import React from "react";
+import spacing from "./helpers/spacing";
+import styled from 'react-emotion'
+
+const Element = ({css = [], as = 'div', className = false, ...rest}) => {
   const cssInput = Array.isArray(css) ? css : [css]
   
   const classes = cssInput.map((c) => {
@@ -15,18 +17,22 @@ const EL = ({css = [], as = 'div', className = false, ...rest}) => {
     }
   })
 
-  return <>
-    {React.createElement(
-      as,
+  return (
+    <>
       {
-        className: cx(
-          className,
-          ...classes
-        ),
-        ...rest
+        React.createElement(
+          as,
+          {
+            className: cx(
+              className,
+              ...classes
+            ),
+            ...rest
+          }
+        )
       }
-    )}
-  </>
+    </>
+  )
 }
 
-export default EL
+export default Element

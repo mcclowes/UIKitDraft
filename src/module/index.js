@@ -5,7 +5,7 @@ import A from './A'
 import Area from "./Area";
 import Button from './Button'
 import Checkbox from './Checkbox'
-import EL from './EL'
+import Element from './Element'
 import Img from "./Img";
 import Input from './Input'
 import LineX from "./LineX";
@@ -54,7 +54,7 @@ injectGlobal`
 `
 
 export {
-  EL,
+  Element,
   W,
   C,
   H1,
