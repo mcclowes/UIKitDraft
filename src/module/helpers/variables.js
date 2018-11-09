@@ -38,7 +38,7 @@ variables.linesColorHover = shade(1 - 0.12, variables.linesColor)
 variables.linesStyle = 'solid'
 variables.linesWidth =  '1'
 variables.linesSize = variables.linesWidth + variables.linesSizeUnit
-variables.radius = 5 + variables.radiusUnit
+variables.radius = 3 + variables.radiusUnit
 
 //text sizes
 variables.textSize1 = 1 / variables.textScale + variables.textSizeUnit

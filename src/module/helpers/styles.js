@@ -7,16 +7,16 @@ const sdm = ['p0', 'p2'] //single direction margin
 const sdp = ['p0', 'p2'] //single direction padding
 
 const inputs = css(`
+  background-color: ${variables.inputsBackgroundColor};
+  border-color: ${variables.linesColor};
+  border-radius: ${variables.radius};
+  border-style: ${variables.linesStyle};
+  border-width: ${variables.linesSize};
+  box-shadow: none;
   color: inherit;
   font-family: inherit;
   font-size: 100%;
   font-weight: normal;
-  box-shadow: none;
-  background-color: ${variables.inputsBackgroundColor};
-  border-color: ${variables.linesColor};
-  border-style: ${variables.linesStyle};
-  border-width: ${variables.linesSize};
-  border-radius: ${variables.radius};
 
   &:hover {
     border-color: ${variables.linesColorHover};

@@ -7,36 +7,45 @@ import getUniqueIndex from "./helpers/getUniqueIndex";
 import variables from "./helpers/variables";
 import styled from 'react-emotion'
 
-const NativeCheckbox = styled('div')`
+const NativeCheckbox = styled('input')`
   position: absolute;
   z-index: -1;
   opacity: 0;
-`
 
-const Wrapper1 = styled('div')`
+  &input[type="checkbox"]{
+    &:checked + label::after {
+      content: "";
+    }
+
+    &:hover + label::before {
+      border-color: ${variables.linesColorHover};
+    }
+
+    &:focus + label::before {
+      border-color: ${variables.focusColor};
+      box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
+      outline: none;
+    }
+
+    &:active + label::before {
+      border-color: ${variables.focusColor};
+      box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
+    }
+
+    &:disabled + label::before {
+      border-color: ${variables.linesColor};
+      background-color: ${variables.inputsBackgroundColorDisabled};
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+`;
+
+const CheckboxWrapper = styled('div')`
   display: inline-block;
   position:relative;
-  input[type="checkbox"]:checked + label::after {
-    content: "";
-  };
-  input[type="checkbox"]:hover + label::before {
-    border-color: ${variables.linesColorHover};
-  };
-  input[type="checkbox"]:focus + label::before {
-    border-color: ${variables.focusColor};
-    box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
-    outline: none;
-  };
-  input[type="checkbox"]:active + label::before {
-    border-color: ${variables.focusColor};
-    box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
-  };
-  input[type="checkbox"]:disabled + label::before {
-    border-color: ${variables.linesColor};
-    background-color: ${variables.inputsBackgroundColorDisabled};
-    box-shadow: none;
-    cursor: not-allowed;
-  };
+  padding: 0.5rem;
+  vertical-align: sub;
 `
 
 const Label = styled('label')`
@@ -49,8 +58,8 @@ const Label = styled('label')`
     background-color: ${variables.inputsBackgroundColor};
     content: "";
     display: block;
-    position: absolute;
     height: 16px;
+    position: absolute;
     width: 16px;
     border: ${variables.linesSize} ${variables.linesStyle} ${
         variables.linesColor
@@ -59,17 +68,17 @@ const Label = styled('label')`
   };
 
   &::after {
-    top:4px;
-    left:4px;
-    position: absolute;
+    border-bottom: 2px solid;
+    border-color: ${variables.textColor};
+    border-left: 2px solid;
     content: none;
     display: block;
     height: 5px;
-    width: 8px;
-    border-left: 2px solid;
-    border-bottom: 2px solid;
-    border-color: ${variables.textColor};
+    left:4px;
+    position: absolute;
+    top:4px;
     transform: rotate(-45deg);
+    width: 8px;
   };
 `
 
@@ -83,15 +92,15 @@ class Checkbox extends React.Component {
     const labelId = id || "tui-checkbox-" + this.uniqueIndex;
     
     return (
-      <Wrapper1>
-        <NativeCheckbox id={labelId} {...rest} />
+      <CheckboxWrapper>
+        <NativeCheckbox type="checkbox" id={labelId} {...rest} />
 
         <Label
           htmlFor={labelId}
         >
           &nbsp;
         </Label>
-      </Wrapper1>
+      </CheckboxWrapper>
     );
   }
 }

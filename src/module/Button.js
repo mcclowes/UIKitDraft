@@ -10,7 +10,6 @@ const ButtonInner = styled('button')`
   };
   color: ${variables.invertedTextColor};
   cursor: pointer;
-  display: inline-block;
   font-family: inherit;
   font-size: 85%;
   font-weight: bold;
@@ -18,6 +17,7 @@ const ButtonInner = styled('button')`
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+  padding: 0.25rem 1rem;
   
   &:hover {
     background-color: ${variables.primaryColorHover};
@@ -42,14 +42,17 @@ const ButtonInner = styled('button')`
 `;
 
 const ButtonWrapper = styled('div')`
-  padding: 1rem; 
+  padding: 0.5rem;
+  display: inline-block;
 `
 
-const Button = props => {
+const Button = (props) => {
+  const {children, className, ...rest} = props
+
   return (
-    <ButtonWrapper>
-      <ButtonInner {...props}>
-        {props.children}
+    <ButtonWrapper className={className}>
+      <ButtonInner {...rest}>
+        {children}
       </ButtonInner>
     </ButtonWrapper>
   );

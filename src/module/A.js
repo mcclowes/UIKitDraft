@@ -2,10 +2,12 @@ import createElement from "../utils/createElement";
 import variables from "./helpers/variables";
 import styled from 'react-emotion'
 
-const Link = styled('div')`
+const Link = styled('a')`
+  border-radius: ${variables.radius};
   color: ${variables.primaryColor};
   text-decoration: none;
-  border-radius: ${variables.radius};
+  cursor: pointer;
+  display: inline-block;
   
   &:hover {
     color: ${variables.primaryColorHover};

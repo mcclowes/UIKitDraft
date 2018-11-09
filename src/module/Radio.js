@@ -7,58 +7,60 @@ import variables from "./helpers/variables";
 import {sdm} from "./helpers/styles";
 
 const NativeRadio = styled('radio')`
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 `
 
 const RadioWrapper = styled('div')`
   display: inline-block;
   position:relative;
   
-  input[type="radio"]:checked + label::after {
-    content: "";
-  };
+  input[type="radio"]{
+    &:checked + label::after {
+      content: "";
+    }
   
-  input[type="radio"]:hover + label::before {
-    border-color: ${variables.linesColorHover};
-  };
-  
-  input[type="radio"]:focus + label::before {
-    border-color: ${variables.focusColor};
-    box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
-    outline: none;
-  };
-  
-  input[type="radio"]:active + label::before {
-    border-color: ${variables.focusColor};
-    box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
-  };
-  
-  input[type="radio"]:disabled + label::before {
-    border-color: ${variables.linesColor};
-    background-color: ${variables.inputsBackgroundColorDisabled};
-    box-shadow: none;
-    cursor: not-allowed;
-  };
+    &:hover + label::before {
+      border-color: ${variables.linesColorHover};
+    }
+    
+    &:focus + label::before {
+      border-color: ${variables.focusColor};
+      box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
+      outline: none;
+    }
+    
+    &:active + label::before {
+      border-color: ${variables.focusColor};
+      box-shadow: 0 0 0 ${variables.linesSize} ${variables.focusColor};
+    }
+    
+    &:disabled + label::before {
+      border-color: ${variables.linesColor};
+      background-color: ${variables.inputsBackgroundColorDisabled};
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
 `
 
 const LabelWrapper = styled('label')`
-  user-select: none;
-  display: inline-block;
-  width: 18px;
   cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  width: 18px;
 
   &::before {
     background-color: ${variables.inputsBackgroundColor};
+    border-radius: 50%;
+    border: ${variables.linesSize} ${variables.linesStyle} ${variables.linesColor};
     content: "";
     display: block;
-    position: absolute;
     height: 16px;
+    position: absolute;
     width: 16px;
-    border: ${variables.linesSize} ${variables.linesStyle} ${variables.linesColor};
-    border-radius: 50%;
-  };
+  }
 
   &::after {
     top:5px;
@@ -70,7 +72,7 @@ const LabelWrapper = styled('label')`
     width: 8px;
     background-color: ${variables.textColor};
     border-radius: 50%;
-  };
+  }
 `
 
 class Radio extends React.Component {
@@ -86,7 +88,7 @@ class Radio extends React.Component {
       <RadioWrapper>
         <NativeRadio id={labelId} {...rest}/>
 
-        <LabelWrapper  htmlFor={labelId}>&nbsp;</LabelWrapper>
+        <LabelWrapper htmlFor={labelId}>&nbsp;</LabelWrapper>
       </RadioWrapper>
     )
   }
