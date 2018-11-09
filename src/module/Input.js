@@ -1,13 +1,40 @@
-import createElement from "../utils/createElement";
-import {inputs} from "./styles";
-import variables from "./variables";
+import {inputs} from "./helpers/styles";
 
-const Input = createElement({
-  name: 'Input', as: 'input', css: ['p1', inputs, `
-    display: inline-block;
-    box-sizing: border-box;
-    width: calc(100% - ${variables.spaceSize2});
-  `]
-})
+import React from 'react'
+import variables from "./helpers/variables";
+import styled from 'react-emotion'
+
+
+const InputWrapper = styled('div')`
+  padding: 0.5rem;
+  display: inline-block;
+  width: 100%;
+
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+`
+
+const InputInner = styled('input')`
+	${inputs};
+
+	box-sizing: border-box;
+	padding: 0.5rem;
+  display: inline-block;
+  width: 100%;
+`
+
+const Input = (props) => {
+  const {children, className, ...rest} = props
+
+  return (
+    <InputWrapper className={className}>
+      <InputInner {...rest}>
+        {children}
+      </InputInner>
+
+    </InputWrapper>
+  );
+};
 
 export default Input

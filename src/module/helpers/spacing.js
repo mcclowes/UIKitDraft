@@ -4,6 +4,7 @@ import variables from "./variables";
 const spacing = {}
 
 const range = [0, 1, 2, 3, 4, 5, 6]
+
 range.map((e, i) => {
   const spacingI = i === 0 ? 0 : variables['spaceSize'+i]
   spacing['m' + i] = css({margin: spacingI})
@@ -20,6 +21,7 @@ range.map((e, i) => {
   spacing['pl' + i] = css({paddingLeft: spacingI})
   spacing['px' + i] = css({paddingLeft: spacingI, paddingRight: spacingI})
   spacing['py' + i] = css({paddingTop: spacingI, paddingBottom: spacingI})
+  
   if (i > 0) {
     const negativeSpacingI = '-' + variables['spaceSize'+i]
     spacing['mn' + i] = css({margin: negativeSpacingI})

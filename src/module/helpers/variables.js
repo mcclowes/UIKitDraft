@@ -38,7 +38,7 @@ variables.linesColorHover = shade(1 - 0.12, variables.linesColor)
 variables.linesStyle = 'solid'
 variables.linesWidth =  '1'
 variables.linesSize = variables.linesWidth + variables.linesSizeUnit
-variables.radius = 5 + variables.radiusUnit
+variables.radius = 3 + variables.radiusUnit
 
 //text sizes
 variables.textSize1 = 1 / variables.textScale + variables.textSizeUnit
@@ -55,26 +55,6 @@ variables.spaceSize3 = 3 / variables.spacesScale + variables.spacesSizeUnit
 variables.spaceSize4 = 5 / variables.spacesScale + variables.spacesSizeUnit
 variables.spaceSize5 = 8 / variables.spacesScale + variables.spacesSizeUnit
 variables.spaceSize6 = 13 / variables.spacesScale + variables.spacesSizeUnit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 
@@ -136,20 +116,5 @@ variables.spaceSize6 = 13 / variables.spacesScale + variables.spacesSizeUnit
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default variables
