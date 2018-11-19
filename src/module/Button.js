@@ -47,15 +47,19 @@ const ButtonWrapper = styled('div')`
 `
 
 const Button = (props) => {
-  const {children, className, ...rest} = props
+  const {children, wrapper, ...rest} = props
+
+  const _wrapper = wrapper || ButtonWrapper
 
   return (
-    <ButtonWrapper className={className}>
+    <_wrapper>
       <ButtonInner {...rest}>
         {children}
       </ButtonInner>
-    </ButtonWrapper>
+    </_wrapper>
   );
 };
+
+Button.Wrapper = ButtonWrapper
 
 export default Button;
